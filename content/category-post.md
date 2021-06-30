@@ -1,6 +1,7 @@
 +++
 title = "Categories yeah!"
 date = 2018-01-06
+[extra]
 category = "test"
 +++
 

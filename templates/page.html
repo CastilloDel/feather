@@ -11,13 +11,13 @@
     			<span class='divider'/>
     			<span>{{ page.date | date(format="%d %B %Y") }}</span>
     		{% endif %}
-    		{% if page.category %}
+    		{% if page.extra.category %}
     			<span class='divider'/>
           <!-- link to page category if user is building categories -->
           {% if config.generate_categories_pages %}
-            <span><a href="/categories/{{page.category}}">{{ page.category }}</a></span>
+            <span><a href="/categories/{{page.extra.category}}">{{ page.extra.category }}</a></span>
           {% else %}
-    			  <span>{{ page.category }}</span>
+    			  <span>{{ page.extra.category }}</span>
           {% endif %}
     		{% endif %}
     		

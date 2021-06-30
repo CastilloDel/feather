@@ -79,11 +79,21 @@
   </div>
   {% endblock content %}
 
+  {% if config.extra.feather_personal_page or config.extra.feather_donate_link %}
   <footer>
+    {% if config.extra.feather_personal_page %}
+    <a href={{config.extra.feather_personal_page}}>About me</a>
+    {% endif %}
+
+    {% if config.extra.feather_personal_page and config.extra.feather_donate_link %}
+    &nbsp;&nbsp;-&nbsp;&nbsp;
+    {% endif %}
+
     {% if config.extra.feather_donate_link %}
-    <a href={{config.extra.feather_donate_link}}>Donate</a>
+    <a href={{config.extra.feather_donate_link}}>Buy me a drink!</a>
     {% endif %}
   </footer>
+  {% endif %}
 
 </body>
 

@@ -8,10 +8,6 @@ base_url = "http://localhost:1111"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` 
-# variable to a theme supported by Gutenberg
-highlight_code = true
 
 # This is commented out here since we're using it like a template
 # but you should use this line when using feather as a theme
@@ -20,6 +16,12 @@ highlight_code = true
 generate_categories_pages = true
 generate_tags_pages = true
 
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` 
+# variable to a theme supported by Gutenberg
+highlight_code = true
 
 [extra]
 feather_disqus_code = "<div id='disqus_thread'><div style='background: lightgrey; text-align: center; color: grey; padding: 100px 24px;'>Comments mockup</div></div>"
