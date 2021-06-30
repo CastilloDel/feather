@@ -28,4 +28,7 @@ feather_disqus_code = "<div id='disqus_thread'><div style='background: lightgrey
 
 feather_donate_link = "https://paypal.me/piedoomy"
 
+
+feather_personal_page = "about-me"
+
 feather_analytics = "<script>return;</script>"
