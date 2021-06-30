@@ -1,3 +1,6 @@
+# This a fork
+This is a fork I made to customize the theme. The original should be possible to find [here](https://github.com/U9H/feather)
+
 # feather
 A lightweight theme for zola 
 
