@@ -13,8 +13,9 @@ compile_sass = true
 # but you should use this line when using feather as a theme
 # theme = "feather"
 
-generate_categories_pages = true
-generate_tags_pages = true
+taxonomies = [
+    { name = "tags" }
+]
 
 
 [markdown]

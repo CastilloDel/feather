@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block content %}
+  <div class="container">
+    <section>
+      <h1> {{ term.name }} </h1>
+    </section>
+    <div class="posts">
+      {% for post in term.pages %}
+        <section>
+          <a class='header-link' href="{{ post.path }}">
+            <h3 class="title"> {{ post.title }} </h3>
+          </a>
+          <p> 
+            {{ post.content | safe | striptags | truncate }} 
+          </p>
+        </section>
+        <hr/>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}

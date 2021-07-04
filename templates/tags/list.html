@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="container">
+        <section>
+            <h2> Tags </h2>
+        </section>
+        <ul>
+            {% for term in terms %}
+                <a class='header-link' href="{{ current_path }}{{ term.slug }}">
+                    <li> {{ term.name }} </li>
+                </a>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}

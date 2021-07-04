@@ -11,15 +11,12 @@
     			<span class='divider'/>
     			<span>{{ page.date | date(format="%d %B %Y") }}</span>
     		{% endif %}
-    		{% if page.extra.category %}
-    			<span class='divider'/>
-          <!-- link to page category if user is building categories -->
-          {% if config.generate_categories_pages %}
-            <span><a href="/categories/{{page.extra.category}}">{{ page.extra.category }}</a></span>
-          {% else %}
-    			  <span>{{ page.extra.category }}</span>
+          {% if page.taxonomies %}
+            {% for tag in page.taxonomies.tags %}
+              <span class='divider' />
+              <span><a href="/tags/{{tag | slugify }}">{{ tag }}</a></span>
+            {% endfor %}
           {% endif %}
-    		{% endif %}
     		
     	</div>
     </div>
