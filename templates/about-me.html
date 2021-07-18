@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class='container'>
+  <section class="post">
+  	<div class="title-and-info">
+    	<h2>{{ page.title }}</h2>
+    </div>
+  	<article>
+  		{{ page.content | safe }}
+  	</article>
+  </section>
+</div>
+{% endblock content %}
