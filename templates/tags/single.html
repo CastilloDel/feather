@@ -1,22 +1,22 @@
 {% extends "index.html" %}
 
 {% block content %}
-  <div class="container">
+<div class="container">
+  <section>
+    <h1> {{ term.name }} </h1>
+  </section>
+  <div class="posts">
+    {% for post in term.pages %}
     <section>
-      <h1> {{ term.name }} </h1>
+      <a class='header-link' href="{{ post.path }}">
+        <h3 class="title"> {{ post.title }} </h3>
+      </a>
+      <p>
+        {{ page.content | safe | split(pat="\n") | first | striptags }}
+      </p>
     </section>
-    <div class="posts">
-      {% for post in term.pages %}
-        <section>
-          <a class='header-link' href="{{ post.path }}">
-            <h3 class="title"> {{ post.title }} </h3>
-          </a>
-          <p> 
-            {{ post.content | safe | striptags | truncate }} 
-          </p>
-        </section>
-        <hr/>
-      {% endfor %}
-    </div>
+    <hr />
+    {% endfor %}
   </div>
+</div>
 {% endblock content %}
