@@ -32,4 +32,4 @@ feather_donate_link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
 feather_personal_page = "about-me"
 
-feather_analytics = "<script>return;</script>"
+feather_analytics = "<script></script>"

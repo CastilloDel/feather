@@ -3,30 +3,54 @@
 {% block content %}
 <div class='container'>
   <section class="post">
-  	<div class="title-and-info">
-    	<h2>{{ page.title }}</h2>
-    	<div class="info">
-    		<span>{{ page.reading_time }} minute read</span>
-    		{% if page.date %}
-    			<span class='divider'/>
-    			<span>{{ page.date | date(format="%d %B %Y") }}</span>
-    		{% endif %}
-          {% if page.taxonomies %}
-            {% for tag in page.taxonomies.tags %}
-              <span class='divider' />
-              <span><a href="/tags/{{tag | slugify }}">{{ tag }}</a></span>
-            {% endfor %}
-          {% endif %}
-    		
-    	</div>
+    <div class="title-and-info">
+      <h2>{{ page.title }}</h2>
+      <div class="info">
+        <span>{{ page.reading_time }} minute read</span>
+        {% if page.date %}
+        <span class='divider' />
+        <span>{{ page.date | date(format="%d %B %Y") }}</span>
+        {% endif %}
+        {% if page.taxonomies %}
+        {% for tag in page.taxonomies.tags %}
+        <span class='divider' />
+        <span><a href="/tags/{{tag | slugify }}">{{ tag }}</a></span>
+        {% endfor %}
+        {% endif %}
+      </div>
     </div>
-  	<article>
-  		{{ page.content | safe }}
-  	</article>
+    {% if page.toc %}
+    <aside class="sidebar__right ">
+      <nav class="toc">
+        <header>
+          <h4 class="nav__title"> Table of contents</h4>
+        </header>
+        <ul class="toc__menu">
+          {% for h1 in page.toc %}
+          <li>
+            <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+            {% if h1.children %}
+            <ul>
+              {% for h2 in h1.children %}
+              <li>
+                <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </aside>
+    {% endif %}
+    <article id="main_text">
+      {{ page.content | safe }}
+    </article>
   </section>
 
   {% if config.extra.feather_disqus_code %}
-    {{ config.extra.feather_disqus_code | safe }}
+  {{ config.extra.feather_disqus_code | safe }}
   {% endif %}
 
 </div>
