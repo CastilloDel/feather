@@ -450,3 +450,16 @@ footer {
 	padding-left: 2em;
 	font-weight:  lighter;
 }
+
+// ------------------------------------------------ //
+//			     		Anchors         			//
+// -------------------------------------------------//
+
+.zola-anchor {
+	opacity: 0%;
+	margin-left: 5px;
+}
+
+.zola-anchor:hover {
+	opacity: 60%;
+}
