@@ -9,6 +9,7 @@ feather_header_image = "/theme_images/default.gif"
 feather_disqus_code = ""
 feather_donate_link = ""
 feather_analytics = ""
+author = ""
 
 [author]
 name = "doomy"
